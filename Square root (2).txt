@@ -1,0 +1,37 @@
+package javaprograms;
+
+public class No2_Squareroot {
+
+public static void main(String[] args) {
+        
+        int number = 4;
+
+     
+        int squareRoot =(int) Math.sqrt(4);
+
+        // Displaying the result
+        
+        System.out.println("The square root of " + number + " is: " + squareRoot);
+        
+        StringBuilder stringBuilder = new StringBuilder("Hello");
+
+        // Append additional text
+        stringBuilder.append(" World");
+
+        // Insert text at a specific position
+        //stringBuilder.insert(6, " Beautiful");
+
+        // Replace a portion of the text
+      //  stringBuilder.replace(0, 5, "Greetings");
+
+        // Delete a portion of the text
+       // stringBuilder.delete(10, 18);
+
+        // Convert StringBuilder to String
+        String result = stringBuilder.toString();
+
+        // Print the result
+        System.out.println(result);
+    }
+
+    }

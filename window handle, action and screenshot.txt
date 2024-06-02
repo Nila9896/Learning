@@ -1,0 +1,54 @@
+ChromeDriver driver= new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        
+        driver.get("https://www.leafground.com/window.xhtml");
+        driver.findElement(By.xpath("//span[text()='Open']")).click();
+        
+        //get current window/tab id 
+        String parentwindow = driver.getWindowHandle();
+        System.out.println(parentwindow +" "+driver.getTitle());
+    
+    
+    //methods:
+        Set<String> windowHandles = driver.getWindowHandles();
+    System.out.println(windowHandles +" :"+ driver.getTitle());
+    
+    //convert set into list
+    //to access any particular windows
+    
+    List<String> allLink =new ArrayList<String>(windowHandles);
+    
+    //index -'0'
+    //0-parent window value
+    //1-child window value
+    driver.switchTo().window(allLink.get(1));
+    
+    driver.findElement(By.id("email")).sendKeys("dilip@testleaf.com");
+    
+    //close-child window
+    driver.close();
+    //get control to parent window
+    driver.switchTo().window(allLink.get(0
+
+
+
+WebElement scroll = driver.findElement(By.linkText("Footwear:"));
+        
+        Actions ac= new Actions(driver);
+        
+        ac.scrollToElement(scroll).perform();
+
+
+
+//step1 -takeshapshot of the page
+        //File scr = driver.getScreenshotAs(OutputType.FILE);
+        
+        //take particular element 
+        File scr = mouseOver.getScreenshotAs(OutputType.FILE);
+        
+        //step 2-create folder for attched the snapshot
+        File des=new File("./snaps/snap1.png");
+        
+        //step3-merge file
+        FileUtils.copyFile(scr, des);

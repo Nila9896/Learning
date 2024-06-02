@@ -1,0 +1,12 @@
+Selenium basis command keys
+
+MAIN COMMAND TO START WITH
+
+public static void main(String[]args)
+chromeDriver driver=new chromeDriver();
+driver.mamnage.timeout().implicitywait(duration of seconds(30));
+driver.get("......");
+driver.manage.window().maximize();
+driver.findElement(By.id("...")).sendKeys(".....);
+
+locators:

@@ -1,0 +1,42 @@
+package javaprograms;
+
+public class No1_Returnlength {
+	
+
+	
+	public static void main(String[]args) {
+		
+		// declare the string
+		
+		String name="FLY ME TO THE MOON";
+		
+		//find the length of the string
+		
+		int length= name.length();
+		
+		System.out.println("length of the string"+length);
+		
+	// to print the length of the last word
+		
+		//step1: use split function and identify the last word using delimiters(comma, tab, symbols)
+		
+		String[] n =name.split("\s");
+		
+		// step 2: get the last word // words.length - 1: 
+		
+		String lastword=n[n.length-1];
+		
+		
+	//step 3: length of the last word
+		
+      int lastwordlength=lastword.length();
+		
+		System.out.println("last word"+lastword+"length"+lastwordlength);
+		
+		String v= "N V SAI SIDDARTH vinitha guna yoga nithu navi indhu";
+		String lv=v.split(" ")[8];
+		System.out.println(lv);
+		
+			
+		}
+	}

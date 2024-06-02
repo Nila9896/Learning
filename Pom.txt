@@ -1,0 +1,90 @@
+ 1)Create a separate Project for POM
+   2)Add all the dependencies in the pom.xml
+   3)Create 4 packages (base,pages,testcase,utils)
+   
+   base -Baseclass(common code)
+   pages- Loginpage,homepage...
+   testcase- execution happen there
+   utils- excel program 
+   4)Inside base package create a PSM
+   5)Inside the BaseClass have preCondition(Load the url) and PostCondition
+   6)Inside the pages package create 6 pages
+           -LoginPage
+       -WelcomePage or HomePage
+       -MyHomePage
+       -MyLeadsPage
+       -CreateLeadPage
+       -ViewLeadPage
+   7)Make sure all the pages should extend your PSM
+8)for each step create new method for each and every action
+ 9)Finally add the return statement
+        -If the control stays  in the same page return this and change the return type
+        -If the control moves to another page then add return statement according to it page
+Need to stay in same page-use this(keyword)
+connet one page to another need use- return new constructor
+
+
+
+Execute in parallel in POM
+        =============================
+        1. to remove static keyword from BaseClass
+        2. you need create own constructor for  all the class , i need pass my driver 
+        2.a -this.driver=driver
+        3.where you given return new constructor(driver)-need pass the driver inside method
+
+
+
+
+from Vinoth TestLeaf to everyone in this session:    11:47 AM
+paralle1  execution :                                                          public class LoginPage extends BaseClass {
+    
+    public LoginPage(ChromeDriver driver) {
+        this.driver=driver;
+    }
+    
+    
+    public LoginPage enterUserName() {
+        driver.findElement(By.id("username")).sendKeys("Demosalesmanager");
+        //m1
+        //LoginPage lp=new LoginPage();
+        //return lp;
+        
+        //m2
+        return this;
+    }
+    
+    public LoginPage enterPassword() {
+        driver.findElement(By.id("password")).sendKeys("crmsfa");
+        return this;
+    }
+    
+    public HomePage clickLoginButton() {
+        driver.findElement(By.className("decorativeSubmit")).click();
+//m1 
+        //HomePage hp=new HomePage();
+        //return hp;
+        
+        //m2- return new Nextpage -ClassName()
+        return new HomePage(driver);
+        
+    }
+
+
+Static parameterize:
+under pages:
+*Create Input agrs inside method
+*remove hardcoded values and replace the input agrs
+under testcase:
+*In,testcase pass the value for it.
+
+
+
+How to Parameterize the data?
+      1)Create a new package(utils) and copy the ReadExel class from the previous project 
+      and paste it here
+      2)Create a data folder and create xcel sheets
+      3)Declare the ExcelFileName globally in PSM
+      4)Create a method for @DataProvider and call the ReadExel class
+      5)Integrate @Test with dataProvider attribute
+      6)Pass the inputs as arguments in the testcase method level and replace the hardcoded values
+      7)In the testcase create a method to mention the ExcelFileName and annotate with @BeforeTest

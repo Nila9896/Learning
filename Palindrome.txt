@@ -1,0 +1,26 @@
+package javaprograms;
+
+public class No3_Palindrome {
+	
+	
+    public static void main(String[]args) {
+    	
+    	String word="A man, a plan, a canal, panama";
+        String str= word.replaceAll("[^A-Za-z0-9]","");
+        String nocase=str.toLowerCase();
+        System.out.println("the main string="+str);
+    	StringBuilder firstword=new StringBuilder();
+        firstword.append(nocase).reverse();
+    	System.out.println("the main string="+firstword);
+    	if(nocase.equals(firstword.toString())) {
+    		System.out.println("true");
+    }
+    
+    	else {
+    		System.out.println("false");
+    	
+    }
+
+    }
+}
+	

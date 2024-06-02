@@ -1,0 +1,46 @@
+alert syntax
+		Alert alert = driver.switchTo().alert();
+		
+		String alertText = alert.getText();
+		
+		System.out.println(alertText);
+		Thread.sleep(3000);
+
+		//simple alert
+		alert.accept();
+
+
+//first frame
+        
+        driver.switchTo().frame(2);
+        
+        //second frame
+        driver.switchTo().frame("frame2");
+        
+        
+        driver.findElement(By.id("Click")).click();
+        
+        //it switch to immedt parent
+        driver.switchTo().parentFrame();
+        
+        //go to main page -out of all frame 
+        driver.switchTo().defaultContent();
+
+
+
+String companyName="tetsleaf";
+		//t,e
+		
+		char[] ch = companyName.toCharArray();
+		
+		//set -synax
+		
+		Set<Character> unique= new LinkedHashSet<Character>();
+		
+		//for each loop
+	for (Character character : ch) {
+			
+			unique.add(character);
+		}
+		System.out.print(unique);
+

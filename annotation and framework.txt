@@ -1,0 +1,25 @@
+   
+https://testng.org/doc/documentation-main.html
+
+from Dilip to everyone:    9:36 AM
+Steps to convert Java Script to TestNG Script
+1. Convert the main() into normal method
+     -  Remove the static keyword
+     -  Remove  String[] args from the main method syntax
+2.Add @Test on  top of the method
+3.Import @Test from org.testng.annotations 
+4. Run As Testng Test individually
+       @Test method –represents individual testcase
+
+
+
+
+<suite name="Dilip" verbose="5">
+  <test  name="TestNG">
+    <classes>
+      <class name="week5.day1.CreateLead"/>
+      <class name="week5.day1.EditLead"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+

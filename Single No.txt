@@ -1,0 +1,24 @@
+package javaprograms;
+
+public class No4_singleNo {
+
+	
+	    public static void main(String[] args) {
+	        int[] nums = {2, 4, 6, 4, 2, 8, 6, 9, 9};
+
+	        int result = findSingleNumber(nums);
+
+	        System.out.println("The single number is: " + result);
+	    }
+
+	    private static int findSingleNumber(int[] nums) {
+	        int result = 0;
+
+	        // XOR all elements in the array
+	        for (int num : nums) {
+	            result ^= num;
+	        }
+
+	        return result;
+	    }
+	}
